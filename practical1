@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class circle{
+private double radius;
+circle(){
+  radius=1;
+}
+circle(double newradius){
+radius=newradius;
+}
+double getArea(){
+    double area= 3.14*(radius * radius);
+    return area;
+}
+double getPerimeter(){
+    double Perimeter= 3.14* 2 * radius;
+    return Perimeter;
+}
+}
+public class Main {
+    
+    public static void main(String[] args) {
+       
+    //circle c1=new circle();
+   System.out.println("enter radius of  circle");
+ Scanner sc= new Scanner(System.in);
+   double userradius=sc.nextDouble();
+   circle c1=new circle(userradius);
+double area_final=c1.getArea();
+double Perimeter_final=c1.getPerimeter();
+System.out.println("cicle Area is=" + area_final);    
+System.out.println("cicle Perimeter is=" + Perimeter_final);
+
+}
+
+}
