@@ -1,0 +1,88 @@
+import java.util.Scanner;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+public class practical2{
+public class Account {
+    private int id = 0;
+    private double balance = 500;
+    private double annualInterestRate = 0.07;
+    private Date date;
+
+    Account() {
+
+    }
+
+    Account(int a, double b, double c) {
+
+        id = a;
+        balance = b;
+        annualInterestRate = c;
+
+    }
+
+    public void getdata() {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter id=");
+        id = sc.nextInt();
+        System.out.print("enter balance=");
+        balance = sc.nextDouble();
+        System.out.print("enter annualrate=");
+        annualInterestRate = sc.nextDouble();
+
+    }
+
+    public void putdata() {
+        System.out.println("id"+id);
+        System.out.println("balance"+balance);
+        System.out.println("annualrate"+annualInterestRate);
+    }
+
+    public void getdate() {
+        SimpleDateFormat dateform = new SimpleDateFormat("dd/MM/yyyy");
+        Date newdate = new Date();
+        System.out.println(dateform.format(newdate));
+
+    }
+
+    public double getMonthlyIntrestRate() {
+        double l;
+        l = balance * annualInterestRate;
+        System.out.println("monthlyrate="+l);
+        return l;
+    }
+
+    public void Withdraw() {
+        Scanner sc = new Scanner(System.in);
+        int l = sc.nextInt();
+        balance -= l;
+
+    }
+
+    public void Deposit() {
+        Scanner sc = new Scanner(System.in);
+        int l = sc.nextInt();
+        balance += l;
+
+    }
+
+    public static void main(String[] args) {
+
+        Account acc = new Account();
+        int a1=1;
+        int b1=1500;
+        double c1=0.08;
+        Account acc1=new Account(a1,b1,c1);
+        acc.getdata();
+        acc.putdata();
+        acc.getdate();
+        acc.getMonthlyIntrestRate();
+        acc.Deposit();
+        acc.Withdraw();
+  System.out.println("----------your account detail------------");
+        acc.putdata();
+
+    }
+
+}
+}
