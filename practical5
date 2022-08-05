@@ -1,0 +1,26 @@
+import java.util.*;
+import java.util.Scanner;
+class practical2{
+public static void main(String args[]){
+    Calc cal=new Calc();
+    System.out.println("5+3 = "+cal.sum(5,3));
+    System.out.println("5+3+2 = "+cal.sum(5,3,2));
+    System.out.println("5+3+2+1 = "+cal.sum(5,3,2,1));
+     System.out.println("made by  21ce074");
+}}
+
+class Calc
+{
+   public int sum(int a,int b)
+   {
+     return a+b;
+   }
+   public int sum(int a,int b,int c,int d)
+   {
+     return a+b+c+d;
+   }
+   public int sum(int a,int b,int c)
+   {
+     return a+b+c;
+   }
+}
